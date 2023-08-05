@@ -1,0 +1,17 @@
+@import './_reset.scss';
+
+html,
+body {
+  height: 100%;
+  font-size: 10px;
+}
+
+button {
+  background-color: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+div[contenteditable='true'] {
+  outline: none;
+}

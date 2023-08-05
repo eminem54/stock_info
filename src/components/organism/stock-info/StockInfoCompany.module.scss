@@ -1,0 +1,19 @@
+@import '@/assets/scss/utils';
+
+.wrap {
+  grid-column: 1 / span 3;
+}
+
+.title {
+  display: inline-block;
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 2.7rem;
+}
+
+.edit_box {
+  background-color: $red-300;
+  padding: 20px;
+  border: 0;
+  font-size: 1.4rem;
+}

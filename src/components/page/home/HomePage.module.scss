@@ -1,0 +1,11 @@
+@import '@/assets/scss/utils';
+
+.wrap {
+  padding-top: $header-height;
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 20px;
+}

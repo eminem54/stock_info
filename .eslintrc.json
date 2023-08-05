@@ -1,0 +1,23 @@
+{
+  "extends": [
+    "prettier",
+    "plugin:@typescript-eslint/recommneded",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "react",
+    "react-hooks",
+    "import",
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "parserOptions": {
+    "project": ["tsconfig.json"]
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
+}

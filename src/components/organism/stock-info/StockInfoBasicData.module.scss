@@ -1,0 +1,25 @@
+.wrap {
+  grid-column: 1 / span 3;
+}
+
+.name {
+  display: inline-block;
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 6rem;
+}
+
+.code {
+  display: inline-block;
+  vertical-align: bottom;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}
+
+.settlement {
+  display: inline-block;
+  vertical-align: bottom;
+  margin-left: 20px;
+  font-size: 1.4rem;
+  line-height: 1.6rem;
+}

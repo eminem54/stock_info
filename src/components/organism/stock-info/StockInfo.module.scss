@@ -1,0 +1,12 @@
+@import '@/assets/scss/utils';
+
+.wrap {
+  gap: 40px;
+  padding: 40px;
+  background-color: $gray-500;
+}
+
+.block {
+  grid-column: span 3;
+  display: flex;
+}
