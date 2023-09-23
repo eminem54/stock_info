@@ -1,53 +1,20 @@
 import React from 'react';
 import styles from './StockInfoPriceData.module.scss';
+import { StockDetailInfoType } from '@/config/type';
 
-const DEMO_DATA = {
-  bestPrice: +8260,
-  bestPriceDay: '20220811',
-  bestPriceRatio: -54.42,
-
-  lowestPrice: -3330,
-  lowestPricecDay: '20230726',
-  lowestPriceRatio: +13.06,
-
-  startPrice: 3690,
-  highPrice: +3825,
-  lowPrice: -3685,
-  currentPrice: +3765,
-
-  volume: 446988,
-  volumeRatio: +121.24,
-
-  comparePreviousDay: +75,
-  upDownRate: +2.03,
+type Props = {
+  stockInfo: StockDetailInfoType;
 };
 
-const StockInfoPriceData = () => {
-  const {
-    bestPrice,
-    bestPriceDay,
-    bestPriceRatio,
-    lowestPrice,
-    lowestPricecDay,
-    lowestPriceRatio,
-    startPrice,
-    highPrice,
-    lowPrice,
-    currentPrice,
-    volume,
-    volumeRatio,
-    comparePreviousDay,
-    upDownRate,
-  } = DEMO_DATA;
-
+const StockInfoPriceData = ({ stockInfo }: Props) => {
   return (
     <div className={styles.wrap}>
       <strong className={styles.category}>가격 정보</strong>
       <div className={styles.item}>
         <span className={styles.item_title}>250최고</span>
-        <span className={styles.item_value}>{bestPrice}</span>
+        <span className={styles.item_value}>{stockInfo.year_max_price}123</span>
       </div>
-      <div className={styles.item}>
+      {/* <div className={styles.item}>
         <span className={styles.item_title}>250최고가일</span>
         <span className={styles.item_value}>{bestPriceDay}</span>
       </div>
@@ -98,7 +65,7 @@ const StockInfoPriceData = () => {
       <div className={styles.item}>
         <span className={styles.item_title}>거래대비</span>
         <span className={styles.item_value}>{volumeRatio}</span>
-      </div>
+      </div> */}
     </div>
   );
 };

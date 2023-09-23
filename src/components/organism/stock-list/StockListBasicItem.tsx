@@ -6,7 +6,7 @@ import { useParams, usePathname, useRouter, useSearchParams } from 'next/navigat
 
 type Props = DefaultStockType;
 
-const StockListBasicItem = ({ stockCode, stockName }: Props) => {
+const StockListBasicItem = ({ stockcode, stockname }: Props) => {
   const { setStockInfo } = useStockInfoRecoil();
   const { replace } = useRouter();
   const searchParams = useSearchParams();
@@ -20,17 +20,16 @@ const StockListBasicItem = ({ stockCode, stockName }: Props) => {
     },
     [searchParams],
   );
-  console.log();
 
   const handleStockItemClick = () => {
-    setStockInfo({ stockCode, stockName });
-    replace(`/?${createQueryString('stockcode', stockCode)}`);
+    setStockInfo({ stockcode, stockname });
+    replace(`/?${createQueryString('stockcode', stockcode)}`);
   };
 
   return (
     <button type="button" className={styles.wrap} onClick={handleStockItemClick}>
-      <span className={styles.code}>{stockCode}</span>
-      <strong className={styles.name}>{stockName}</strong>
+      <span className={styles.code}>{stockcode}</span>
+      <strong className={styles.name}>{stockname}</strong>
     </button>
   );
 };

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styles from './StockListBasic.module.scss';
 import StockListBasicItem from './StockListBasicItem';
 import { DefaultStockType } from '@/config/type';
+import { getStockListApi } from '@/api/stock/stockApi';
 
 const DEMO_DATA = {
   stockList: [
@@ -33,15 +34,21 @@ type Props = {
 };
 
 const StockListBasic = () => {
-  const { stockList } = DEMO_DATA;
+  const [stockList, setStockList] = useState<DefaultStockType[]>([]);
+
+  useEffect(() => {
+    getStockListApi().then((data) => {
+      setStockList(data);
+    });
+  }, [getStockListApi]);
 
   return (
     <div className={styles.wrap}>
-      {stockList.map(({ stockCode, stockName }, idx) => (
+      {stockList.map(({ stockcode, stockname }, idx) => (
         <StockListBasicItem
           key={`basic-stock-item-${idx}`}
-          stockCode={stockCode}
-          stockName={stockName}
+          stockcode={stockcode}
+          stockname={stockname}
         />
       ))}
     </div>
