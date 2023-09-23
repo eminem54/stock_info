@@ -1,17 +1,16 @@
-import { atom, useRecoilState } from 'recoil';
-import { DefaultStockType } from '@/config/type';
+import { atom, useRecoilState, selector } from 'recoil';
+import { StockDetailInfoType } from '@/config/type';
+import { stockInfoState } from './useStockInfoRecoil';
 
-const stockInfoState = atom<DefaultStockType>({
-  key: 'stockInfo',
-  default: { stockCode: '', stockName: '' },
+const stockDetailInfoState = atom<StockDetailInfoType>({
+  key: 'stockDetailInfo',
+  default: { stockcode: '', stockname: '' },
 });
 
-const useStockInfoRecoil = () => {
-  const [stockInfo, setStockInfo] = useRecoilState(stockInfoState);
+const useDetailStockInfoRecoil = () => {
+  const [detailStockInfo, setDetailStockInfo] = useRecoilState(stockDetailInfoState);
 
-  const isSelectedStock = !!stockInfo.stockCode;
-
-  return { isSelectedStock, stockInfo, setStockInfo };
+  return { detailStockInfo, setDetailStockInfo };
 };
 
-export default useStockInfoRecoil;
+export default useDetailStockInfoRecoil;
